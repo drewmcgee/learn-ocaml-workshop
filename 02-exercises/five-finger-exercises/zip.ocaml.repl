@@ -1,0 +1,8 @@
+let rec zip lst1 lst2 =
+match (lst1, lst2) with
+    | ([ ], [ ]) -> [ ]
+    | ((x::xs), [ ]) -> [x] :: zip xs [ ] 
+    | ([ ], (y::ys)) -> [y] :: zip [ ] ys 
+    | ((x::xs) , (y::ys)) -> [x;y] :: zip xs ys;;
+
+zip [1;2;3] [4;5;6];;

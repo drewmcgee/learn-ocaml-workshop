@@ -1,0 +1,4 @@
+let rec idxs acc lst =
+match lst with
+    | [ ] -> [ ]
+    | (x::xs) -> acc :: idxs (acc + 1) xs;;

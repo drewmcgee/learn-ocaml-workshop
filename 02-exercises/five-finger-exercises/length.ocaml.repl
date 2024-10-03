@@ -1,0 +1,6 @@
+let rec length acc lst =
+match lst with
+    | [ ] -> acc
+    | _::xs -> length (acc + 1) xs;;
+
+length 0 [1;2;3];;

@@ -1,0 +1,15 @@
+let rec flatten lst = 
+    (*in ocaml list of list require uniform
+        depth/nestedness across elements*)
+    match lst with 
+        | [] -> []
+        | []::_ -> []
+        | (y::ys)::xs -> [y] @ flatten [ys] @ flatten xs
+        ;;
+
+let rec simplerFlatten lst =
+    match lst with
+    | [] -> []
+    | hd :: tl -> hd @ flatten tl
+    
+flatten [[[[1;2]]];[[[3]]]];;
